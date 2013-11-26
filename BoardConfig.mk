@@ -83,7 +83,7 @@ TARGET_PREBUILT_KERNEL := device/htc/pyramid/kernel
 
 # cat /proc/emmc
 # dev:        size     erasesize name
-# mmcblk0p31: 000ffa00 00000200 "misc"
+# mmcblk0p32: 000ffa00 00000200 "misc"
 # mmcblk0p21: 00fffc00 00000200 "recovery"
 # mmcblk0p20: 01000000 00000200 "boot"
 # mmcblk0p22: 31fffc00 00000200 "system"
@@ -106,5 +106,12 @@ BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/graphics.c
-BOARD_USES_RECOVERY_CHARGEMODE := true
+#BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/graphics.c
+#BOARD_USES_RECOVERY_CHARGEMODE := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HTCBATT := device/htc/pyramid/prebuilt/htcbatt
+
+#TWRP 2 configuration
+DEVICE_RESOLUTION := 540x960
+TW_INCLUDE_DUMLOCK := true
+TARGET_RECOVERY_INITRC := device/htc/pyramid/init.htc.rc
